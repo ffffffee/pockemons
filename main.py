@@ -1,6 +1,13 @@
 import requests
-req=requests.get("https://w-dog.ru/wallpapers/9/15/458745441613494/vajoming-ssha-grand-teton-nacionalnyj-park-snejk-river-grand-titon-nacionalnyj-park-zakat-oblaka-vecher-gory-pole-cvety-zelen-les-derevya-sosny.jpg")
-content=req.content
-img=open("img.jpg","wb")
-img.write(content)
-img.close()
+import json
+
+while True:
+    command = input()
+    if command == "add":
+        req = requests.get("https://aws.random.cat/meow")
+        r=requests.get(json.loads(req.text)["file"])
+        content=r.content
+        img=open("img.jpg","wb")
+        img.write(content)
+        img.close()
+        print("nice")
